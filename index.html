@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>tp-device-info</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0"/>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="page">
+
+        <h2 class="center"><a href="tp-device-info://">tp-device-info://</a></h2>
+        <h2 class="center"><a href="tp-device-info://myCustomCallback">tp-device-info://myCustomCallback</a></h2>
+
+        <div id="result">
+            <ul>
+                <li>callback: <b><span id="callback"></span></b></li>
+                <li>deviceUDID: <b><span id="deviceUDID"></span></b></li>
+                <li>appVersion: <b><span id="appVersion"></span></b></li>
+                <li>appIdentifier: <b><span id="appIdentifier"></span></b></li>
+                <li>entitlementToken: <b><span id="entitlementToken"></span></b></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+
+        function twixlOnGetDeviceInfo(deviceUDID, appVersion, appIdentifier, entitlementToken) {
+            document.getElementById("callback").innerHTML = "twixlOnGetDeviceInfo";
+            document.getElementById("deviceUDID").innerHTML = deviceUDID;
+            document.getElementById("appVersion").innerHTML = appVersion;
+            document.getElementById("appIdentifier").innerHTML = appIdentifier;
+            document.getElementById("entitlementToken").innerHTML = entitlementToken;
+        }
+
+        function myCustomCallback(deviceUDID, appVersion, appIdentifier, entitlementToken) {
+            document.getElementById("callback").innerHTML = "myCustomCallback";
+            document.getElementById("deviceUDID").innerHTML = deviceUDID;
+            document.getElementById("appVersion").innerHTML = appVersion;
+            document.getElementById("appIdentifier").innerHTML = appIdentifier;
+            document.getElementById("entitlementToken").innerHTML = entitlementToken;
+        }
+
+    </script>
+
+</body>
+
+</html>
